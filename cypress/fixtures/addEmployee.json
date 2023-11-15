@@ -1,0 +1,10 @@
+{
+    "addEmployee":{
+        "firstName": "misk",
+        "middleName": "",
+        "lastName": "sholi",
+        "empPicture": null,
+        "employeeId": "0654"
+    }
+
+}

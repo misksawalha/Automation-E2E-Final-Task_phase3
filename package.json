@@ -1,0 +1,50 @@
+{
+  "name": "gsg_cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx cypress open",
+    "cypressn": "npm run allure:clear ; npx cypress run --browser chrome --spec cypress/e2e/OrangeHRM/Report.spec.cy.ts --env allure=true ; npm run allure:report",
+    "gazaSkyGeeks": "npm run regression-allureCh && npm run allure:report",
+    "regression-allureCh": "cypress run --browser chrome --spec cypress/e2e/OrangeHRM/Report.spec.cy.ts --env allure=true",
+    "ul-regression-allure": "cypress run --browser electron --spec cypress/e2e/OrangeHRM/Report.spec.cy.ts --env allure=true && npm run allure:report",
+    "haneen": "npm run gazaSkyGeeks",
+    "regression-allureEl": "cypress run --spec cypress/e2e/tests/*/* --env allure=true",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:clear": "npm run clear:allure && npm run clear:cypress",
+    "clear:allure": "rimraf allure-results allure-results-aggregated-files allure-report",
+    "clear:cypress": "rimraf cypress/screenshots cypress/videos",
+    "allure:clean": "rm -r allure-results/ allure-report cypress/screenshots cypress/videos || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cypress/grep": "^4.0.0",
+    "@mmisty/cypress-allure-adapter": "^0.14.2",
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "allure-commandline": "^2.24.1",
+    "chai": "^4.3.10",
+    "cypress": "^13.5.0",
+    "cypress-file-upload": "^5.0.8",
+    "live-server": "^1.2.2",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.11.1",
+    "esbuild": "^0.19.5",
+    "xlsx": "^0.18.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+    "cypress/e2e/**/[filepath]/**/*.{js,ts}",
+    "cypress/e2e/**/[filepath].{js,ts}"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
+    }
+}

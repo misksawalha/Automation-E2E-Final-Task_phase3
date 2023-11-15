@@ -1,0 +1,11 @@
+{
+    "vacancyData": {
+        "description": "",
+        "employeeId": 7,
+        "isPublished": true,
+        "jobTitleId": 22,
+        "name": "Node js",
+        "numOfPositions": null,
+        "status": true
+    }
+}
