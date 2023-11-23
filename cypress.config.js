@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
+    //update
     baseUrl: "https://automationexercise.com/",
     async setupNodeEvents(on, config) {
       // implement node event listeners here
