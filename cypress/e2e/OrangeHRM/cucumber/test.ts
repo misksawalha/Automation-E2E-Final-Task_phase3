@@ -9,3 +9,4 @@ When('I visit the URL',()=>{
 Given('Open home page',()=>{
   cy.get('.active > :nth-child(1) > h1').should('contain','AutomationExercise')
 })
+//update
